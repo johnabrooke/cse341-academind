@@ -1,4 +1,5 @@
 const path = require('path');
+const PORT = process.env.PORT || 3000;
 
 const express = require('express');
 const bodyParser = require('body-parser');
@@ -21,4 +22,4 @@ app.use(shopRoutes);
 
 app.use(errorController.get404page);
 
-app.listen(3000);
+app.listen(PORT, () => console.log(`Listening on ${ PORT }`));
