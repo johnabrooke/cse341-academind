@@ -1,0 +1,28 @@
+After completing the assignment, be sure to push to Github and Heroku.
+Please answer the questions in this text file and submit it to I-Learn.
+
+1. Copy and paste the URL for your web application (e.g., Heroku):
+    https://ecommerce341.herokuapp.com/
+
+2. Copy and paste the URL for your source code repository (e.g., GitHub):
+    https://github.com/johnabrooke/cse341-academind
+
+3. Briefly list and describe the elements of the application that are functioning.
+    All elements.
+
+4. Briefly describe any pieces of the assignment that are not yet working correctly.
+    No elements.
+
+5. Briefly describe the "coolest" thing you learned while completing this assignment.
+    Extracting dynamic params and using query params, as well as searching to find
+    out how to connect to github through ssh.
+
+6. If you could change this assignment to be more effective or helpful, what would you change?
+    Have more instruction on how to incorporate our apps within the class template.
+    The video is helpful, but it would be nice to have some written instruction and tips.
+
+7. Please select the category you feel best describes your assignment:
+   4 - Meets requirements
+
+8. Provide a brief justification (1-2 sentences) for selecting that category.
+    I followed the videos and my app meets the requirements of the assignment.
