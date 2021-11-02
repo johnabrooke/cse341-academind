@@ -10,7 +10,15 @@ router.get('/login', authController.getLogin);
 
 router.get('/signup', authController.getSignup);
 
-router.post('/login', authController.postLogin);
+router.post('/login', 
+[
+    body('email')
+        .isEmail()
+        .withMessage('Please enter a valid email address'),
+    body('password', 'Please enter a valid password, with at least 8 characters.')
+        .isLength({ min: 8 })
+],
+    authController.postLogin);
 
 router.post(
     '/signup', 
