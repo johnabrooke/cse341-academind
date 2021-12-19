@@ -153,12 +153,12 @@ exports.postSignup = (req, res, next) => {
             })
             .then(result => {
                 res.redirect('/login');
-                // return transporter.sendMail({
-                //     to: email,
-                //     from: 'bro16077@byui.edu',
-                //     subject: 'Ecommerce App Signup Confirmation',
-                //     html: '<h1>You successfully signed up!</h1>'
-                // });
+                return transporter.sendMail({
+                    to: email,
+                    from: process.env.FROM_EMAIL,
+                    subject: 'Ecommerce App Signup Confirmation',
+                    html: '<h1>You successfully signed up!</h1>'
+                });
             })
             .catch(err => {
                 const error = new Error(err);
@@ -209,11 +209,11 @@ exports.postReset = (req, res, next) => {
                 res.redirect('/');
                 transporter.sendMail({
                     to: req.body.email,
-                    from: 'bro16077@byui.edu',
+                    from: process.env.FROM_EMAIL,
                     subject: 'Ecommerce App Password Reset',
                     html: `
-                    <p>Please click the link the link below to reset your password.</p>
-                    <a href="http://localhost:3000/passwordReset/${token}">Reset Password</a>
+                    <p>Please click the link below, or copy and paste it into your browser, to reset your password.</p>
+                    <a href="${process.env.PROJECT_URL}/newPassword/${token}">http://localhost:3000/newPassword/${token}</a>
                     `
                 });
             })

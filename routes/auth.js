@@ -15,8 +15,8 @@ router.post(
     [
         body('email')
             .isEmail()
-            .withMessage('Please enter a valid email address')
-            .normalizeEmail(),
+            .withMessage('Please enter a valid email address'),
+            // .normalizeEmail(),
         body('password', 'Please enter a valid password, with at least 8 characters.')
             .isLength({ min: 8 })
             .trim()
@@ -43,8 +43,8 @@ router.post(
                             );
                         }
                     });
-            })
-            .normalizeEmail(),
+            }),
+            // .normalizeEmail(),
         body(
             'password',
             'Please enter a password with at least 8 characters.'
@@ -69,7 +69,7 @@ router.get('/passwordReset', authController.getPasswordReset);
 
 router.post('/passwordReset', authController.postReset);
 
-router.get('/passwordReset/:token', authController.getNewPassword);
+router.get('/newPassword/:token', authController.getNewPassword);
 
 router.post('/newPassword', authController.postNewPassword);
 
