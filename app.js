@@ -47,7 +47,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(
     session({
-        secret: 'my secret',
+        secret: process.env.SESSION_SECRET || "default secret",
         resave: false,
         saveUninitialized: false,
         store: store
